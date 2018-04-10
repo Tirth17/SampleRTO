@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RTO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+#office
+{
+background-color: LightSlateGray;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#dropdown
+{
+color:black;
+}
+.navbar {
+padding : 20px 20px;
+    margin-bottom: 0;
+    background-color: #38A0CD;
+    z-index: 9999;
+    border: 0;
+    font-size: 18px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #000 !important;
+  background-color:  #38A0CD;
+font-size: 18px;
+}
+
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+
+.navbar-default .navbar-toggle {
+ 
+    color:#000 !important;
+}
+.jumbotron { 
+ background-image: url("background.jpg");
+height:750px;
+background-repeat: no-repeat;
+ background-size:cover;
+
+    
+}
+button {
+    background-color: #38A0CD;
+    color:black;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+   
+}
+
+button:hover{
+color:  #000!important;
+    background-color: #fff;
+}
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+     background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<style>
+body
+{
+background-image: url("bck.jpg");
+				background-repeat:no-repeat;
+				background-size:cover;
+			}	
+</style>
+</head>
+
+<body>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                
+            </div>
+
+    
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav ">
+                    <li>
+                        <a href="pro.html">Home</a>
+                    </li>
+                    <li>
+ </a></li>
+              <li><span class="glyphicon glyphicon-log-in"></span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#aboutus">About us</a>
+                    </li>
+                    <li>
+<li id="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Services <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="foff.html">Offices</a></li>
+            <li><a href="Questions.html">Questions For Driving License</a></li>
+            <li><a href="form_for_registration.html">Form For Registrations</a></li>
+           <li><a href="feedbck-comm.html">Comments/Feedback</a></li>
+            <li><a href="r.html">Results</a></li>
+          <li><a href="rul.html">Rules</a></li>
+           <li><a href="roadsigns.html">Road Signs</a></li>
+		   <li><a href="rss.html">NEWS</a></li>
+<li><a href="faq(new).html">FAQ's</a></li>
+          </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+<h1>Offices:</h1>
+
+<table style="background-color: LightSlateGray;">
+  <tr>
+    <th>Sr.no</th>
+    <th>Offices</th>
+    <th>Rto Name and adderess</th>
+  <th>Telephone no</th>
+  </tr>
+  <tr>
+    <td id="v11"></td>
+    <td id="v12"></td>
+    <td id="v13"></td>
+    <td id="v14"></td>
+  </tr>
+  <tr>
+    <td id="v21"></td>
+    <td id="v22"></td>
+    <td id="v23"></td>
+    <td id="v24"></td>
+  </tr>
+  <tr>
+    <td id="v31"></td>
+    <td id="v32"></td>
+    <td id="v33"></td>
+    <td id="v34"></td>
+  </tr>
+  <tr>
+    <td id="v41"></td>
+    <td id="v42"></td>
+    <td id="v43"></td>
+    <td id="v44"></td>
+  </tr>
+  <tr>
+    <td id="v51"></td>
+    <td id="v52"></td>
+    <td id="v53"></td>
+    <td id="v54"></td>
+  </tr>
+</table>
+
+
+<script>
+
+
+var myObj, x, obj1;
+
+obj1=[
+    {
+        "Srno": "1",
+        "Offices": "MH 01 RTO Mumbai(central)",
+        "Rto": "Shri. S. S. Pedamkar (Addl Charge ) Regional Transport Office  Old bodyguard lane, Tulsiwadi, Tardeo,Mumbai - 400 034",
+        "Telephone": "022 / 2353233"
+    },
+    
+    {
+        "Srno": "2",
+        "Offices": "MH 02 RTO Mumbai (West)",
+        "Rto": "Shri. P.G. Bhalerao Regional Transport Office 111-D, Ambivali village, New manish nagar, Versova road, Mumbai- 400 053.",
+        "Telephone": "022 / 26366957"
+    },
+    
+    {
+        "Srno": "3",
+        "Offices": "MH 03 Dy. RTO Borivali",
+        "Rto": "Shri. R. K. Gaikwad Dy. Regional Transport Office BMC Road Depo Building , Kandar Pada, Dahisar (W) , Mumbai – 68",
+        "Telephone": "022 / 26323315"
+    },
+
+	{
+        "Srno": "4",
+        "Offices": "MH 47 RTO Mumbai (East)",
+        "Rto": "Shri.B.I..Ajari Regional Transport Office B-2, 3rd floor, Wadala truck terminals, Wadala, Mumbai - 400037",
+        "Telephone": "022 / 26362252"
+	},
+
+	{
+        "Srno": "5",
+        "Offices": "MH 04 RTO Thane(west)",
+        "Rto": "Shri. S. C. Dole (Addl Charge) Regional Transport Office Opp. Central Jail, Thane - 400 601",
+        "Telephone": "022 / 25363838"
+	}
+]
+
+
+
+document.getElementById("v11").innerHTML = obj1[0].Srno;
+document.getElementById("v12").innerHTML = obj1[0].Offices;
+document.getElementById("v13").innerHTML = obj1[0].Rto;
+document.getElementById("v14").innerHTML = obj1[0].Telephone;
+
+document.getElementById("v21").innerHTML = obj1[1].Srno;
+document.getElementById("v22").innerHTML = obj1[1].Offices;
+document.getElementById("v23").innerHTML = obj1[1].Rto;
+document.getElementById("v24").innerHTML = obj1[1].Telephone;
+
+document.getElementById("v31").innerHTML = obj1[2].Srno;
+document.getElementById("v32").innerHTML = obj1[2].Offices;
+document.getElementById("v33").innerHTML = obj1[2].Rto;
+document.getElementById("v34").innerHTML = obj1[2].Telephone;
+
+document.getElementById("v41").innerHTML = obj1[3].Srno;
+document.getElementById("v42").innerHTML = obj1[3].Offices;
+document.getElementById("v43").innerHTML = obj1[3].Rto;
+document.getElementById("v44").innerHTML = obj1[3].Telephone;
+
+document.getElementById("v51").innerHTML = obj1[4].Srno;
+document.getElementById("v52").innerHTML = obj1[4].Offices;
+document.getElementById("v53").innerHTML = obj1[4].Rto;
+document.getElementById("v54").innerHTML = obj1[4].Telephone;
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RTO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+
+var i=0;
+alert("Start the test"); 
+var myVar = setInterval(myTimer, 1000);
+function myTimer() {
+
+   var d = new Date();
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+i=i+1;
+if(i==9)
+{
+clearInterval(myVar);
+}
+
+ }
+
+var r=setTimeout(myFunction,10000);
+function myFunction()
+{
+alert("Test is over!!!! Please click on submit");
+
+
+
+}
+</script>
+<style> 
+button {
+    background-color: #38A0CD;
+    color:black;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+   
+}
+
+button:hover{
+color:  #000!important;
+    background-color: #fff;
+}
+#dropdown
+{
+color:black;
+}
+.navbar {
+padding : 20px 20px;
+    margin-bottom: 0;
+    background-color: #38A0CD;
+    z-index: 9999;
+    border: 0;
+    font-size: 18px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #000 !important;
+  background-color:  #38A0CD;
+font-size: 18px;
+}
+
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+
+.navbar-default .navbar-toggle {
+ 
+    color:#000 !important;
+}
+h1 { 
+color: white
+text-allign: center;
+}
+
+p {
+font-family: verdana;
+font-size: 20px;
+}
+
+</style>
+</head>
+<body>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                
+            </div>
+
+    
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav ">
+                    <li>
+                        <a href="pro.html">Home</a>
+                    </li>
+                    <li>
+ </a></li>
+              <li><span class="glyphicon glyphicon-log-in"></span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#aboutus">About us</a>
+                    </li>
+                    <li>
+<li id="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Services <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="offices(new).html">Offices</a></li>
+            <li><a href="Questions.html">Questions For Driving License</a></li>
+            <li><a href="form_for_registration.html">Form For Registrations</a></li>
+           <li><a href="feedbck-comm.html">Comments/Feedback</a></li>
+            <li><a href="r.html">Results</a></li>
+            <li><a href="rul.html">Rules</a></li>
+           <li><a href="roadsigns.html">Road Signs</a></li>
+<li><a href="faq(new).html">FAQ's</a></li>
+          </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<div id="ques" style="margin-top:150px; margin-left:12px;">
+<h1> Questions For Drivers License </h1>
+
+<p id="demo" style="text-align="center;"></p>
+
+<button onclick="myTimer()"> timer</button>
+<h5> **Results will be displayed on the site within a week</h5>
+ <p> 
+<form action="pge.html">
+1. The only time you can cross two solid yellow lines on the road is when:<br>
+<input type="radio" name="1"> You need to pass <br>
+<input type="radio" name="1"> Turning left at an intersection <br>
+<input type="radio" name="1"> The car in front of you is driving under speed limit <br> 
+<input type="radio" name="1"> you should never cross double solid yellow line <br>
+2. Always leave extra space in front of you when:<br>
+<input type="radio" name="2"> driving in bad weather<br> 
+<input type="radio" name="2"> another driver is followin gyou closely <br> 
+<input type="radio" name="2"> you are following a motorcycle <br> 
+<input type="radio" name="2"> all of the above <br> 
+3. Roads and highways are always most slippery when: <br>
+<input type="radio" name="3"> when it rains at night <br>
+<input type="radio" name="3"> when it first starts to rain or snow<br>
+<input type="radio" name="3"> during a heavy downpour <br>
+<input type="radio" name="3"> after it has been raining for a few hours <br>
+4. You should drive on the shoulder to pass a car only:<br>
+<input type="radio" name="4"> if the vehicle ahead of you is turning left <br>
+<input type="radio" name="4"> if traffic is really heavy and your turn or exit is in sight <br>
+<input type="radio" name="4"> when the shoulder is wide enough <br>
+<input type="radio" name="4"> under no circumstance <br>
+5. When you are driving on the freeway and the vehicle in front of you is a large truck, you should drive:<br>
+<input type="radio" name="5"> no more than one car length behind so the driver can see you <br>
+<input type="radio" name="5"> farther behind than you would for a passenger vehicle <br>
+<input type="radio" name="5"> close behind the truck in bad weather because the driver <br> can see better than you <br>
+<input type="radio" name="5"> depends on the size of truck <br>
+6. To stop in an emergency situation when your car does not have ABS brakes, you should: <br>
+<input type="radio" name="6">  gently pump your brakes to slow your vehicle<br>
+<input type="radio" name="6">   slam on your brakes<br>
+<input type="radio" name="6"> apply hard steady pressure without locking up your wheels <br>
+<input type="radio" name="6"> lock up all the wheels to slow down your acceleration <br>
+7. When you see a flashing yellow light at an intersection you should:<br>
+<input type="radio" name="7"> keep your speed up as not to disrupt the flow of traffic <br>
+<input type="radio" name="7"> only slow down if other vehicles are present <br>
+<input type="radio" name="7"> slow down and cross the intersection carefully <br>
+<input type="radio" name="7"> stop then enter the intersection when safe to do so <br>
+<br><br><br>
+<input type="submit" value="Submit" align="center"> <input type="reset">
+</form>
+</p>
+<p> If you change the input values and then click the "Reset" button, the form-data will be reset to the default values.</p>
+</div>
+</body>
+</html>

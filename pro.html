@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>RTO</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "about_us.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>NO</th><th>NAME</th><th>DESIGNATION</th><th>OFFICENO</th></tr>";
+  var x = xmlDoc.getElementsByTagName("AB");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("NO")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+	x[i].getElementsByTagName("DESIGNATION")[0].childNodes[0].nodeValue +
+    "</td><td>"+
+	x[i].getElementsByTagName("OFFICENO")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
+<style>
+#office
+{
+background-color: LightSlateGray;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#dropdown
+{
+color:black;
+}
+.navbar {
+padding : 20px 20px;
+    margin-bottom: 0;
+    background-color: #38A0CD;
+    z-index: 9999;
+    border: 0;
+    font-size: 18px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+.navbar li a, .navbar .navbar-brand {
+    color: #000 !important;
+  background-color:  #38A0CD;
+font-size: 18px;
+}
+
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+
+.navbar-default .navbar-toggle {
+ 
+    color:#000 !important;
+}
+.jumbotron { 
+ background-image: url("background.jpg");
+height:750px;
+background-repeat: no-repeat;
+ background-size:cover;
+
+    
+}
+button {
+    background-color: #38A0CD;
+    color:black;
+    padding: 8px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+   
+}
+
+button:hover{
+color:  #000!important;
+    background-color: #fff;
+}
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+     background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                
+            </div>
+
+    
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav ">
+                    <li>
+                        <a href="pro.html">Home</a>
+                    </li>
+                    <li>
+ </a></li>
+              <li><span class="glyphicon glyphicon-log-in"></span><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#aboutus">About us</a>
+                    </li>
+                    <li>
+<li id="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other Services <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="foff.html">Offices</a></li>
+            <li><a href="Questions.html">Questions For Driving License</a></li>
+            <li><a href="form_for_registration.html">Form For Registrations</a></li>
+           <li><a href="feedbck-comm.html">Comments/Feedback</a></li>
+            <li><a href="r.html">Results</a></li>
+          <li><a href="rul.html">Rules</a></li>
+           <li><a href="roadsigns.html">Road Signs</a></li>
+		   <li><a href="rss.html">NEWS</a></li>
+<li><a href="faq(new).html">FAQ's</a></li>
+          </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+<br>
+<br>
+<br>
+<div class="jumbotron">
+</div>
+<div id="aboutus" style="margin-left:12px;">
+<font face="algerian" size="3" >
+<h1 align="center"><u> About  Us </h1></u>
+</font>
+<font face="Lucida Fax" color="brown">
+<h2><b><u>MOTOR VEHICLES DEPARTMENT<b></u></h2>
+</font>
+<body bgcolor="#E0FFFF">
+<br>
+<p style="font-family:Rockwell; font-size:160%; color:orange";>
+<b><u> A) INTRODUCTION:</b></u>
+<br>
+</p>
+<p style="font-family:Comic Sans MS; font-size:120%;color:grey"> In order to give effect to the provisions of Motor Vehicles Act, 1988 & Rules made there under, Motor Vehicle Department has been setup as per Section 213 of Motor Vehicle Act 1988 in the State of Maharashtra</p>
+<br>
+<p style="font-family:Stencil; font-size:160%;color:orange">
+<b><u> B) INTRODUCTION:</b></u>  Vision, Mission, Objectives and Functions of the Department </b></u>
+<br></p>
+<p style="font-family:Century Gothic; font-size:120%;color:grey"><b><u>VISION</b></u>
+<br>
+-->Safe Transportation of Goods & Passengers<br>
+-->Prompt & Citizen friendly services relating to Motor Vehicles<br><br>
+<b><u>MISSION</b></u><br>
+-->To aim for stricter compliance of provisions of Motor Vehicle Act & Rules <br>
+-->To establish user friendly front end facilities for visiting public<br>
+-->To strengthen the Department by providing equipments, manpower & Training <br>
+-->To simplify the taxation of vehicles <br>
+-->To create effective grievance redressed mechanism <br><br>
+<b><u>FUNCTIONS</b></u><br>
+-->To enforce the statutory provisions of Motor Vehicles Act & Rules<br>
+-->To collect revenue in the form of Taxes & fees from Motor Vehicles as per the provisions of the law <br>
+-->Establishment:The Motor Vehicles Department’s functions are monitored and controlled by Transport Commissioner office, located at Mumbai. The State has 15 Regional Transport Offices and 35 Deputy Regional Transport Offices .The provisions of Motor Vehicle Act are enforced through executive officers, while the ministerial work is carried out by clerical staff.<br>
+</p>
+<br>
+<p style="font-family:Verdana; font-size:120%;color:orange">Below is the address of the Transport Commissioner Office and other information relating to our officers and their designations : </p>
+<p align="center">
+<font face="Veradana" size="2px">
+<br>
+<br>
+<font face="algerian" size="6" >
+<h1 align="center"><u> Contact  Us </h1></u>
+</font>
+<br>
+<br>
+<table  border="1" cellspacing="0" cellpadding="5" 
+            align="center" style="width: 399px">
+                          <tr valign="middle" class="contenttxtinner" bgcolor="#007fd0" align="center"> 
+                            <td colspan="2" bgcolor="#007fd0"> 
+                              <div align="right"></div>
+
+                              <font color="#FFFFFF"><b>Transport Commissioner Office</b></font></td>
+                          </tr>
+                          <tr valign="top" > 
+                            <td width="25%"> 
+                              <div align="right"><b><u>Address</u> -</b></div>
+                            </td>
+                            <td width="75%"> 
+                              <p>Administrative Bldg., 4th Floor, Govt. Colony, 
+                                <br>
+
+                                  Opp. Dr. Babasaheb Ambedkar Garden,<br>
+                                  Bandra (East), Mumbai - 400 051.</p>
+                            </td>
+                          </tr>
+                          <tr valign="top" > 
+                            <td width="30%"> 
+                              <div align="left"><b><u>Enquiry Phone</u> -</b></div>
+
+                            </td>
+                            <td>022-26550932 / 33 / 34 Ext. 216 </td>
+                          </tr>
+                          <tr valign="top" > 
+                            <td width="30%"> 
+                                <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fax No -</b></td>
+                            <td>022-26414901</td>
+                          </tr>
+                          </table>
+</font>
+<br> <br>
+</p>
+<p>
+<center><button type="button" onclick="loadDoc()">Get Info</button></center>
+<br><br>
+		<table id="demo" bgcolor="#007fd0"></table>
+
+		</p>
+</div>
+
+
+<div id="id01" class="modal" method="post">
+  
+  <form class="modal-content animate" action="login.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="9.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username1" required>
+<br><br>
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password1" required>
+        <br><br>
+      <button type="submit" name="submit">Login</button>
+ <br><br>
+      <input type="checkbox" checked="checked"> Remember me
+    </div>
+
+   
+      
+    </div>
+  </form>
+</div>
+
+
+</body>
+</html>
